@@ -3,6 +3,9 @@ const animal = ["finch", "ox", "lemur", "lynx", "hyena", "otter", "crow", "canar
 const dyno = ["T-Rex", "Triceratops", "Velociraptor", "Avimimus", "Archaeornis", "Nipponosaurus", "Loricatosaurus", "Erectopus", "Brontomerus", "Saurornitholestes", "Lancangjiangosaurus", "Bagaraatan", "Sauraechinodon", "Vitakridrinda", "Kuszholia", "Jintasaurus", "Walkersaurus", "Technosaurus", "Tianyulong", "Coelophysis", "Volkheimeria", "Walgettosuchus", "Dyoplosaurus", "Agnosphitys", "Lengosaurus"];
 const cocktail = ["Royal Bermuda Cocktail", "Orange Tundra", "Seven and Seven", "Sangrita","Cosmopolitan", "Flaming Dr Pepper", "Dark 'N' Stormy", "Horse's Neck", "Savoy Affair", "Hennchata", "Mimosa", "Karsk", "Appletini", "Tamagozake", "Whiskey sour", "Caipivodka", "Gibson", "The Last Word", "Prairie Fire", "Orange Tundra", "Agua de Valencia", "Chocolate martini", "Caribou Lou", "Jazmin Sour", "Mimosa",];
 const flower = ["clover", "babys breath", "rose", "rosemary", "columbine", "amaryllis", "carnation", "anemone", "sunflower", "bluebell", "edelweiss", "gladiolus", "jasmine", "petunia", "azalea"];
+const ascii = "     _.-._         ..-..         _.-._\n    (_-.-_)       /|'.'|\\       (_'.'_)\n  mrf./\-/.        \\)\\-/(/        ,-.-.\n  __/ /-. \\__   __/ ' ' \\__   __/'-'-'\\__\n ( (___/___) ) ( (_/-._\\_) ) ( (_/   \\_) )\n '.Oo___oO.'   '.Oo___oO.'   '.Oo___oO.'"
+
+const categories = ["animal", "dyno", "cocktail", "flower"];
 
 const generateRandomNumber = (maxRange) => {
     return Math.floor(Math.random() * maxRange)
@@ -10,45 +13,39 @@ const generateRandomNumber = (maxRange) => {
 
 const getArticle = (string) => {
     let firstChar = string[0].toLowerCase();
-    if (firstChar === a || firstChar === e || firstChar === i || firstChar === o || firstChar === u){
+    if (firstChar === "a" || firstChar === "e" || firstChar === "i" || firstChar === "o" || firstChar === "u"){
         return "an";
     } else {
         return 'a';
     }
 } 
 
+const printQuote = (category, random) => {
+    console.log(`If you were ${getArticle(category)} ${category} you would be ${getArticle(random)} ${random}.`);
+}
+
 const generateQuotes = () => {
-    let quotes = {
-            animal: "",
-            dyno: "",
-            cocktail: "",
-            flower: ""
-        }
-    let keys = quotes.keys();    
-    for (let i = 0; i < keys.length; i++){
-        switch (keys[i]){
+    for (let i = 0; i < categories.length; i++){
+        switch (categories[i]){
             case "animal":
-                let animal = generateRandomNumber(animal.length);
-                let article = getArticle(animal);
-                console.log(`If you were an animal you would be ${article} ${animal}`);
+                random = generateRandomNumber(animal.length);
+                printQuote(categories[i],animal[random]);
                 break;
             case "dyno":
-                let dyno = generateRandomNumber(dyno.length);
-                let article = getArticle(dyno);
-                console.log(`If you were an animal you would be ${article} ${dyno}`);
+                random = generateRandomNumber(dyno.length);
+                printQuote(categories[i],dyno[random]);
                 break;
             case "cocktail":
-                let cocktail = generateRandomNumber(cocktail.length);
-                let article = getArticle(cocktail);
-                console.log(`If you were an animal you would be ${article} ${cocktail}`);
+                random = generateRandomNumber(cocktail.length);
+                printQuote(categories[i],cocktail[random]);
                 break;
             case "flower":
-                let flower = generateRandomNumber(flower.length);
-                let article = getArticle(flower);
-                console.log(`If you were an animal you would be ${article} ${flower}`);
+                random = generateRandomNumber(flower.length);
+                printQuote(categories[i],flower[random]);
                 break;        
         }
     }
+    console.log(ascii);
 }
 
 generateQuotes();
