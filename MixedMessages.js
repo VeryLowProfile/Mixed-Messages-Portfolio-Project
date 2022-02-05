@@ -5,6 +5,8 @@ const cocktail = ["Royal Bermuda Cocktail", "Orange Tundra", "Seven and Seven", 
 const flower = ["clover", "babys breath", "rose", "rosemary", "columbine", "amaryllis", "carnation", "anemone", "sunflower", "bluebell", "edelweiss", "gladiolus", "jasmine", "petunia", "azalea"];
 const ascii = "     _.-._         ..-..         _.-._\n    (_-.-_)       /|'.'|\\       (_'.'_)\n  mrf./\-/.        \\)\\-/(/        ,-.-.\n  __/ /-. \\__   __/ ' ' \\__   __/'-'-'\\__\n ( (___/___) ) ( (_/-._\\_) ) ( (_/   \\_) )\n '.Oo___oO.'   '.Oo___oO.'   '.Oo___oO.'"
 
+const 
+
 const categories = ["animal", "dyno", "cocktail", "flower"];
 
 const generateRandomNumber = (maxRange) => {
