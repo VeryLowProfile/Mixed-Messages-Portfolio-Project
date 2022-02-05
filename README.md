@@ -1,6 +1,6 @@
 # **Mixed Messages**
 
-## **A random "If you were .. you would be .." quote generator**
+A random "If you were .. you would be .." quote generator
 
 ## **Tech**
 - javascript
@@ -10,7 +10,7 @@
 2. Run in your terminal `node 'your_folder_path'\MixedMessages.js`
 
 ## **How to customize the script**
-You can customize the script adding properites to the object "categories".
+You can customize the script adding properties to the object "categories".
 
 ```
 const categories = {
