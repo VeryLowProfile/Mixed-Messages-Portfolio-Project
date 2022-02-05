@@ -1,13 +1,10 @@
 //Storing all message part
-const animal = ["finch", "ox", "lemur", "lynx", "hyena", "otter", "crow", "canary", "sheep", "cougar", "gorilla", "aardvark", "donkey", "mole", "mongoose", "dog", "leopard", "elk", "turtle", "deer", "bear", "fox", "bison", "dingo", "parrot"];
-const dyno = ["T-Rex", "Triceratops", "Velociraptor", "Avimimus", "Archaeornis", "Nipponosaurus", "Loricatosaurus", "Erectopus", "Brontomerus", "Saurornitholestes", "Lancangjiangosaurus", "Bagaraatan", "Sauraechinodon", "Vitakridrinda", "Kuszholia", "Jintasaurus", "Walkersaurus", "Technosaurus", "Tianyulong", "Coelophysis", "Volkheimeria", "Walgettosuchus", "Dyoplosaurus", "Agnosphitys", "Lengosaurus"];
-const cocktail = ["Royal Bermuda Cocktail", "Orange Tundra", "Seven and Seven", "Sangrita","Cosmopolitan", "Flaming Dr Pepper", "Dark 'N' Stormy", "Horse's Neck", "Savoy Affair", "Hennchata", "Mimosa", "Karsk", "Appletini", "Tamagozake", "Whiskey sour", "Caipivodka", "Gibson", "The Last Word", "Prairie Fire", "Orange Tundra", "Agua de Valencia", "Chocolate martini", "Caribou Lou", "Jazmin Sour", "Mimosa",];
-const flower = ["clover", "babys breath", "rose", "rosemary", "columbine", "amaryllis", "carnation", "anemone", "sunflower", "bluebell", "edelweiss", "gladiolus", "jasmine", "petunia", "azalea"];
-const ascii = "     _.-._         ..-..         _.-._\n    (_-.-_)       /|'.'|\\       (_'.'_)\n  mrf./\-/.        \\)\\-/(/        ,-.-.\n  __/ /-. \\__   __/ ' ' \\__   __/'-'-'\\__\n ( (___/___) ) ( (_/-._\\_) ) ( (_/   \\_) )\n '.Oo___oO.'   '.Oo___oO.'   '.Oo___oO.'"
-
-const 
-
-const categories = ["animal", "dyno", "cocktail", "flower"];
+const categories = {
+    animal: ["finch", "ox", "lemur", "lynx", "hyena", "otter", "crow", "canary", "sheep", "cougar", "gorilla", "aardvark", "donkey", "mole", "mongoose", "dog", "leopard", "elk", "turtle", "deer", "bear", "fox", "bison", "dingo", "parrot"],
+    dyno: ["T-Rex", "Triceratops", "Velociraptor", "Avimimus", "Archaeornis", "Nipponosaurus", "Loricatosaurus", "Erectopus", "Brontomerus", "Saurornitholestes", "Lancangjiangosaurus", "Bagaraatan", "Sauraechinodon", "Vitakridrinda", "Kuszholia", "Jintasaurus", "Walkersaurus", "Technosaurus", "Tianyulong", "Coelophysis", "Volkheimeria", "Walgettosuchus", "Dyoplosaurus", "Agnosphitys", "Lengosaurus"],
+    cocktail: ["Royal Bermuda Cocktail", "Orange Tundra", "Seven and Seven", "Sangrita","Cosmopolitan", "Flaming Dr Pepper", "Dark 'N' Stormy", "Horse's Neck", "Savoy Affair", "Hennchata", "Mimosa", "Karsk", "Appletini", "Tamagozake", "Whiskey sour", "Caipivodka", "Gibson", "The Last Word", "Prairie Fire", "Orange Tundra", "Agua de Valencia", "Chocolate martini", "Caribou Lou", "Jazmin Sour", "Mimosa",],
+    flower: ["clover", "babys breath", "rose", "rosemary", "columbine", "amaryllis", "carnation", "anemone", "sunflower", "bluebell", "edelweiss", "gladiolus", "jasmine", "petunia", "azalea"]
+}
 
 const generateRandomNumber = (maxRange) => {
     return Math.floor(Math.random() * maxRange)
@@ -27,27 +24,11 @@ const printQuote = (category, random) => {
 }
 
 const generateQuotes = () => {
-    for (let i = 0; i < categories.length; i++){
-        switch (categories[i]){
-            case "animal":
-                random = generateRandomNumber(animal.length);
-                printQuote(categories[i],animal[random]);
-                break;
-            case "dyno":
-                random = generateRandomNumber(dyno.length);
-                printQuote(categories[i],dyno[random]);
-                break;
-            case "cocktail":
-                random = generateRandomNumber(cocktail.length);
-                printQuote(categories[i],cocktail[random]);
-                break;
-            case "flower":
-                random = generateRandomNumber(flower.length);
-                printQuote(categories[i],flower[random]);
-                break;        
-        }
-    }
-    console.log(ascii);
+    const keys = Object.keys(categories); 
+    keys.forEach(category => {
+        randStuff = categories[category][generateRandomNumber(categories[category].length)]; 
+        printQuote(category,randStuff);
+    })
 }
 
 generateQuotes();
