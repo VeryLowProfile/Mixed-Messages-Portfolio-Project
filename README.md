@@ -5,6 +5,10 @@ A random "If you were .. you would be .." quote generator
 ## **Tech**
 - javascript
 
+## **Main project purpose**
+The main topic purpose of this project is to familiarize with javascript.
+The project is part of the Codecademy Full stack developer course I'm enrolled in.
+
 ## **How to run the script**
 1. Download source
 2. Run in your terminal `node 'your_folder_path'\MixedMessages.js`
